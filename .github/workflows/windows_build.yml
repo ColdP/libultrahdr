@@ -1,7 +1,7 @@
 name: Build Windows Release
 
 on:
-  workflow_dispatch: # 允许你手动点击运行
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -G "Visual Studio 17 2022" -A x64
+          cmake .. -G "Visual Studio 17 2022" -A x64 -DUHDR_BUILD_DEPS=1
 
       - name: Build
         run: |
